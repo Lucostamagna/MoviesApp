@@ -6,6 +6,7 @@ import DetailScreen from '../screens/DetailScreen';
 
 const Stack = createStackNavigator();
 
+//navigation- two screen
 export const Navigation = () => {
   return (
     <Stack.Navigator
