@@ -5,10 +5,10 @@ import './MoviePosterThemes'
 import { styles } from './MoviePosterThemes';
 
 
-interface Props {
+interface PropsMovie {
     movie: Movie;
 }
-export const MoviePoster = ({movie}: Props) => {
+export const MoviePoster = ({ movie }: PropsMovie) => {
  
 
 const uri= `https://image.tmdb.org/t/p/w500${movie.poster_path}`
