@@ -4,6 +4,7 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {MoviePoster} from '../components/MoviePoster';
 import {useMovies} from '../hooks/useMovies';
 import moviesDB from '../api/moviesDb';
+import HorizontalSlider from '../components/HorizontalSlider';
 
 
 const { width } = Dimensions.get("screen")
@@ -38,20 +39,9 @@ const HomeScreen = () => {
      
 
     </View>
-    <View style={{ height:350, marginTop:50}}>
-
-<Text style={{fontSize:30, fontWeight:'bold'}}> PELICULAS EN CINE</Text>
-<FlatList
-data= {cinemaMovies}
-renderItem={({item}:any)=> <MoviePoster movie={item} width={160}  height={250} /> }
-keyExtractor={(item)=> item.id.toString()}
-horizontal={true}
-showsHorizontalScrollIndicator={false}
-/>
-
-
-
-    </View>
+    <HorizontalSlider title="En cine" movies={cinemaMovies}/>
+    <HorizontalSlider  movies={cinemaMovies}/>
+    <HorizontalSlider title="En cine" movies={cinemaMovies}/>
     </View>
     </ScrollView>
   );
