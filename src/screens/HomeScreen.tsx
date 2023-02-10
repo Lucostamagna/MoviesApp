@@ -1,5 +1,5 @@
-import React, {useEffect} from 'react';
-import {ActivityIndicator, Text, View, FlatList, Dimensions, ScrollView} from 'react-native';
+import React from 'react';
+import {ActivityIndicator,  View, FlatList, Dimensions, ScrollView} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {MoviePoster} from '../components/MoviePoster';
 import {useMovies} from '../hooks/useMovies';
@@ -9,7 +9,7 @@ import HorizontalSlider from '../components/HorizontalSlider';
 
 const { width } = Dimensions.get("screen")
 const HomeScreen = () => {
-  const {cinemaMovies, isLoading} = useMovies();
+  const {nowPlaying, popular, topReated, upComing, isLoading} = useMovies();
 
   const { top } = useSafeAreaInsets();
 
@@ -27,7 +27,7 @@ const HomeScreen = () => {
       
        <FlatList
        showsHorizontalScrollIndicator={false}
-       data= {cinemaMovies}
+       data= {nowPlaying}
        renderItem={({item}:any)=> <MoviePoster movie={item} /> }
         horizontal={true}
         snapToInterval={width }
@@ -39,9 +39,10 @@ const HomeScreen = () => {
      
 
     </View>
-    <HorizontalSlider title="En cine" movies={cinemaMovies}/>
-    <HorizontalSlider  movies={cinemaMovies}/>
-    <HorizontalSlider title="En cine" movies={cinemaMovies}/>
+    <HorizontalSlider title="Popular" movies={nowPlaying}/>
+    <HorizontalSlider title="Top Rated" movies={topReated}/>
+    <HorizontalSlider title="Up Coming" movies={upComing}/>
+    
     </View>
     </ScrollView>
   );
