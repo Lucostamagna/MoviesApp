@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-
 // request for all movies. 
 const moviesDB= axios.create({
     baseURL:'https://api.themoviedb.org/3/movie',
