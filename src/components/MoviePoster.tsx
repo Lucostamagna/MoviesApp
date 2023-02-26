@@ -21,7 +21,7 @@ const navigator = useNavigation();
 return (
     <TouchableOpacity  
     activeOpacity={0.9}
-    onPress={()=> navigator.navigate('DetailScreen')}
+    onPress={()=> navigator.navigate('DetailScreen', movie)}
       style={{width, height, marginHorizontal:7}}>
       <View style={styles.image_container}>
         <Image
