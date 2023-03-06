@@ -4,6 +4,7 @@ import { Image, Text, View, Dimensions, StyleSheet } from 'react-native';
 import { RootStackParam } from '../navigation/NavigationControllers';
 import { styles } from '../components/MoviePosterThemes';
 import { ScrollView } from 'react-native-gesture-handler';
+import useMovieDetail from '../hooks/useMovieDetail';
 
 const screenHeigth= Dimensions.get('screen').height
 
@@ -14,7 +15,7 @@ const DetailScreen = ({route}: PropsDetailScreen) => {
 
   const movie=route.params
   const uri= `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-  console.log(movie.id)
+  
   
   return (
     <ScrollView>
@@ -33,6 +34,7 @@ const DetailScreen = ({route}: PropsDetailScreen) => {
     <Text style={styles.subTitle}>{movie.original_title}</Text>
     <Text style={styles.title}>{movie.title}</Text>
   </View>
+  
   </ScrollView>
   )
 }

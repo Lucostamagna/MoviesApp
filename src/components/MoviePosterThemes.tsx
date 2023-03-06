@@ -15,16 +15,20 @@ export const styles = StyleSheet.create({
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
-      height: 2,
+      height: 10,
     },
     shadowOpacity: 0.25,
-    shadowRadius: 6,
+    shadowRadius: 7,
 
-    elevation: 10,
+    elevation: 9,
   },
   image_border:{
-    borderBottomEndRadius:15,
+    flex:1,
+    overflow:'hidden',
+    borderBottomEndRadius:25,
     borderBottomStartRadius:25,
+                     
+
   },
   imagen_poster: {
     flex: 1,
