@@ -22,6 +22,10 @@ export const styles = StyleSheet.create({
 
     elevation: 10,
   },
+  image_border:{
+    borderBottomEndRadius:15,
+    borderBottomStartRadius:25,
+  },
   imagen_poster: {
     flex: 1,
   },

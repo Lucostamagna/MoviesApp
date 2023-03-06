@@ -14,16 +14,19 @@ const DetailScreen = ({route}: PropsDetailScreen) => {
 
   const movie=route.params
   const uri= `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+  console.log(movie.id)
   
   return (
     <ScrollView>
       
   <View style={style.imagen_container}>
+    <View style={styles.image_border}>
     <Image
     source={{uri}}
     
     style={styles.imagen_poster}
     />
+    </View>
     
   </View>
   <View style={styles.margin_container}>
@@ -50,7 +53,7 @@ const style= StyleSheet.create({
         shadowRadius: 6,
         
         elevation: 3,
-        borderBottomEndRadius:15
+       
 }
 })
 
