@@ -19,6 +19,7 @@ const useMovieDetail = (movieId:number) => {
     movieFull:undefined,
     cast:[],
  });
+
   
 
  const getMovieDetails = async()=>{
@@ -37,7 +38,7 @@ setState({
 }
 
 useEffect(()=>{
-    getMovieDetails
+    getMovieDetails()
 }, []);
 
 return {
