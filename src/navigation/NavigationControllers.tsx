@@ -22,7 +22,7 @@ export const Navigation = () => {
     screenOptions={{
       headerShown:false,
       cardStyle:{
-      backgroundColor:'white'
+      // backgroundColor:'white'
       }
     }}
     >

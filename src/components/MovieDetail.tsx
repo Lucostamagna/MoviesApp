@@ -3,6 +3,7 @@ import { View, Text } from 'react-native';
 import { MovieFull } from '../interface/movieInterface';
 import { Cast } from '../interface/creditsInterface';
 import CastIten from './CastIten';
+import { FlatList } from 'react-native-gesture-handler';
 
 
 interface detailProps{
@@ -25,7 +26,18 @@ const MovieDetail = ({movieFull,cast }: detailProps) => {
 
           <View style={{marginTop:10, marginBottom:100}}>
             <Text style={{fontSize:15, fontWeight:'bold', marginTop:10}}> ACTORES </Text>
-          <CastIten actor={cast[0]}/>
+          
+          
+          <FlatList
+          
+          data={cast}
+          keyExtractor={(item)=>item.id.toString()}
+          renderItem={({item})=> <CastIten actor={item}/>}
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
+          style={{marginTop:10}}
+
+          />
           </View>
         </View>
     </>

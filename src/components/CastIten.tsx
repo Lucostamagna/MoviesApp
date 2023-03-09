@@ -10,10 +10,13 @@ const CastIten = ({actor} :castProps) => {
   const uri= `https://image.tmdb.org/t/p/w500${actor.profile_path}`;
   return (
     <View style={styles.container}>
+      { actor.profile_path && 
       <Image
       source={{uri}}
       style={{width:50, height:50, borderTopLeftRadius:10}}
       />
+      }
+      
       <View style={styles.actor_info}>
     <Text style={{ fontSize:18, fontWeight:'bold'}}>
       {actor.name}
@@ -40,6 +43,8 @@ const styles= StyleSheet.create({
     shadowRadius: 7,
 
     elevation: 9,
+    marginRight:10,
+   
   },
   actor_info:{
     marginLeft:10
