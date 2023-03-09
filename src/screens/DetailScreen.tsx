@@ -6,6 +6,7 @@ import {styles} from '../components/MoviePosterThemes';
 import {ScrollView} from 'react-native-gesture-handler';
 import useMovieDetail from '../hooks/useMovieDetail';
 import MovieDetail from '../components/MovieDetail';
+import CastIten from '../components/CastIten';
 
 const screenHeigth = Dimensions.get('screen').height;
 
@@ -36,7 +37,7 @@ const DetailScreen = ({route}: PropsDetailScreen) => {
           ?<ActivityIndicator size={35} color ="grey" style={{marginTop:25}}/>
           :  <MovieDetail movieFull={movieFull!} cast={cast}/> 
         }
-        
+         
       </View>
     </ScrollView>
   );
