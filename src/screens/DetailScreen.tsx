@@ -1,6 +1,7 @@
 import {StackScreenProps} from '@react-navigation/stack';
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import {Image, Text, View, Dimensions, StyleSheet, ActivityIndicator} from 'react-native';
+import { Image, Text, View, Dimensions, StyleSheet, ActivityIndicator, TouchableOpacity } from 'react-native';
 import {RootStackParam} from '../navigation/NavigationControllers';
 import {styles} from '../components/MoviePosterThemes';
 import {ScrollView} from 'react-native-gesture-handler';
@@ -13,9 +14,10 @@ const screenHeigth = Dimensions.get('screen').height;
 interface PropsDetailScreen
   extends StackScreenProps<RootStackParam, 'DetailScreen'> {}
 
-const DetailScreen = ({route}: PropsDetailScreen) => {
+const DetailScreen = ({route, navigation}: PropsDetailScreen) => {
   const movie = route.params;
   const uri = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+  const navigator = useNavigation()
 
   const {isLoading, cast, movieFull} = useMovieDetail(movie.id);
   console.log(movie.id)
@@ -39,6 +41,12 @@ const DetailScreen = ({route}: PropsDetailScreen) => {
         }
          
       </View>
+      <TouchableOpacity  style={{backgroundColor:'red'}}
+onPress={()=> navigator.navigate('HomeScreen')}
+
+>
+<Text> hola</Text>
+</TouchableOpacity>
     </ScrollView>
   );
 };

@@ -1,9 +1,10 @@
 import React from 'react'
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import { MovieFull } from '../interface/movieInterface';
 import { Cast } from '../interface/creditsInterface';
 import CastIten from './CastIten';
 import { FlatList } from 'react-native-gesture-handler';
+
 
 
 interface detailProps{
@@ -39,6 +40,8 @@ const MovieDetail = ({movieFull,cast }: detailProps) => {
 
           />
           </View>
+
+          
         </View>
     </>
   )
