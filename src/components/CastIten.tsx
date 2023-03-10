@@ -1,40 +1,36 @@
-import React from 'react'
-import { Cast } from '../interface/creditsInterface';
-import { Text, View, Image, StyleSheet } from 'react-native';
+import React from 'react';
+import {Cast} from '../interface/creditsInterface';
+import {Text, View, Image, StyleSheet} from 'react-native';
 
 interface castProps {
-  actor:Cast
-} 
-
-const CastIten = ({actor} :castProps) => {
-  const uri= `https://image.tmdb.org/t/p/w500${actor.profile_path}`;
-  return (
-    <View style={styles.container}>
-      { actor.profile_path && 
-      <Image
-      source={{uri}}
-      style={{width:50, height:50, borderTopLeftRadius:10}}
-      />
-      }
-      
-      <View style={styles.actor_info}>
-    <Text style={{ fontSize:18, fontWeight:'bold'}}>
-      {actor.name}
-    </Text>
-    <Text style={{ fontSize:15, color:'grey'}}>
-      {actor.character}
-    </Text>
-    </View>
-    </View>
-  )
+  actor: Cast;
 }
 
-const styles= StyleSheet.create({
-  container:{
-    flexDirection:'row',
-    backgroundColor:'white',
-    height:60,
-    borderRadius:10,
+const CastIten = ({actor}: castProps) => {
+  const uri = `https://image.tmdb.org/t/p/w500${actor.profile_path}`;
+  return (
+    <View style={styles.container}>
+      {actor.profile_path && (
+        <Image
+          source={{uri}}
+          style={{width: 50, height: 50, borderTopLeftRadius: 10}}
+        />
+      )}
+
+      <View style={styles.actor_info}>
+        <Text style={{fontSize: 18, fontWeight: 'bold'}}>{actor.name}</Text>
+        <Text style={{fontSize: 15, color: 'grey'}}>{actor.character}</Text>
+      </View>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    backgroundColor: 'white',
+    height: 60,
+    borderRadius: 10,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -44,14 +40,13 @@ const styles= StyleSheet.create({
     shadowRadius: 7,
 
     elevation: 9,
-    marginHorizontal:10,
-   
-    paddingTop:3,
-    paddingBottom:3
-   
+    marginHorizontal: 10,
+
+    paddingTop: 3,
+    paddingBottom: 3,
   },
-  actor_info:{
-    marginLeft:10
-  }
-})
-export default CastIten
+  actor_info: {
+    marginLeft: 10,
+  },
+});
+export default CastIten;

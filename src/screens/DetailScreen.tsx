@@ -1,7 +1,15 @@
 import {StackScreenProps} from '@react-navigation/stack';
-import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 import React from 'react';
-import { Image, Text, View, Dimensions, StyleSheet, ActivityIndicator, TouchableOpacity } from 'react-native';
+import {
+  Image,
+  Text,
+  View,
+  Dimensions,
+  StyleSheet,
+  ActivityIndicator,
+  TouchableOpacity,
+} from 'react-native';
 import {RootStackParam} from '../navigation/NavigationControllers';
 import {styles} from '../components/MoviePosterThemes';
 import {ScrollView} from 'react-native-gesture-handler';
@@ -17,10 +25,10 @@ interface PropsDetailScreen
 const DetailScreen = ({route, navigation}: PropsDetailScreen) => {
   const movie = route.params;
   const uri = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
-  const navigator = useNavigation()
+  const navigator = useNavigation();
 
   const {isLoading, cast, movieFull} = useMovieDetail(movie.id);
-  console.log(movie.id)
+  console.log(movie.id);
 
   return (
     <ScrollView>
@@ -34,19 +42,17 @@ const DetailScreen = ({route, navigation}: PropsDetailScreen) => {
         <Text style={styles.title}>{movie.title}</Text>
       </View>
       <View>
-        {
-          isLoading 
-          ?<ActivityIndicator size={35} color ="grey" style={{marginTop:25}}/>
-          :  <MovieDetail movieFull={movieFull!} cast={cast}/> 
-        }
-         
+        {isLoading ? (
+          <ActivityIndicator size={35} color="grey" style={{marginTop: 25}} />
+        ) : (
+          <MovieDetail movieFull={movieFull!} cast={cast} />
+        )}
       </View>
-      <TouchableOpacity  style={{backgroundColor:'red'}}
-onPress={()=> navigator.navigate('HomeScreen')}
-
->
-<Text> hola</Text>
-</TouchableOpacity>
+      <TouchableOpacity
+        style={{backgroundColor: 'red'}}
+        onPress={() => navigator.navigate('HomeScreen')}>
+        <Text> hola</Text>
+      </TouchableOpacity>
     </ScrollView>
   );
 };
