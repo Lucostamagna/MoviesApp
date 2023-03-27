@@ -8,8 +8,8 @@ import FedeScrenn from './src/screens/FedeScrenn';
 const App = () => {
   return (
     <NavigationContainer>
-    {/* <Navigation/> */}
-    <FedeScrenn/>
+    <Navigation/>
+    {/* <FedeScrenn/> */}
     </NavigationContainer>
     
   )

@@ -5,6 +5,7 @@ import {MoviePoster} from '../components/MoviePoster';
 import {useMovies} from '../hooks/useMovies';
 import moviesDB from '../api/moviesDb';
 import HorizontalSlider from '../components/HorizontalSlider';
+import GradientBackground from '../components/GradientBackground';
 
 
 const { width } = Dimensions.get("screen")
@@ -21,6 +22,8 @@ const HomeScreen = () => {
     );
   }
   return (
+
+    <GradientBackground>
     <ScrollView>
     <View>
     <View style={{marginTop: top + 20}}>
@@ -45,6 +48,7 @@ const HomeScreen = () => {
     
     </View>
     </ScrollView>
+    </GradientBackground>
   );
 };
 
