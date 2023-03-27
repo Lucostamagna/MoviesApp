@@ -10,7 +10,7 @@ const GradientBackground = ({children}: GradientProps) => {
   return (
     <View style={{flex: 1}}>
       <LinearGradient
-        colors={['#21618C', '#85C1E9', '#FDFEFE']}
+        colors={['#F39C12', '#F7DC6F', '#FDFEFE']}
         style={{...StyleSheet.absoluteFillObject}}
         start={{x: 0.1, y: 0.1}}
       />

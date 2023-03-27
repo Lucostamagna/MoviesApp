@@ -13,7 +13,7 @@ const CastIten = ({actor}: castProps) => {
       {actor.profile_path && (
         <Image
           source={{uri}}
-          style={{width: 50, height: 50, borderTopLeftRadius: 10}}
+          style={{width: 50, height: 50, borderTopLeftRadius: 50, borderRadius:50}}
         />
       )}
 
@@ -28,8 +28,9 @@ const CastIten = ({actor}: castProps) => {
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    backgroundColor: 'white',
+    backgroundColor: '#F2F3F4',
     height: 60,
+    width:250,
     borderRadius: 10,
     shadowColor: '#000',
     shadowOffset: {

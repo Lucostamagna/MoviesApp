@@ -4,14 +4,17 @@ export const styles = StyleSheet.create({
   image: {
     flex: 1,
     borderRadius: 18,
+    
   },
   view: {
     width: 300,
     height: 420,
+    elevation:10 
   },
   image_container: {
     flex: 1,
     borderRadius: 18,
+    
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -32,6 +35,7 @@ export const styles = StyleSheet.create({
   },
   imagen_poster: {
     flex: 1,
+    elevation:10 
   },
   margin_container: {
     marginHorizontal: 20,

@@ -12,6 +12,7 @@ interface detailProps {
 const MovieDetail = ({movieFull, cast}: detailProps) => {
   return (
     <>
+    
       <View style={{marginHorizontal: 20}}>
         <Text> - {movieFull.genres.map(g => g.name).join(', ')}</Text>
       </View>
@@ -43,6 +44,7 @@ const MovieDetail = ({movieFull, cast}: detailProps) => {
           />
         </View>
       </View>
+      
     </>
   );
 };

@@ -16,6 +16,7 @@ import {ScrollView} from 'react-native-gesture-handler';
 import useMovieDetail from '../hooks/useMovieDetail';
 import MovieDetail from '../components/MovieDetail';
 import CastIten from '../components/CastIten';
+import GradientBackground from '../components/GradientBackground';
 
 const screenHeigth = Dimensions.get('screen').height;
 
@@ -31,6 +32,7 @@ const DetailScreen = ({route, navigation}: PropsDetailScreen) => {
   console.log(movie.id);
 
   return (
+    <GradientBackground>
     <ScrollView>
       <View style={style.imagen_container}>
         <View style={styles.image_border}>
@@ -51,9 +53,10 @@ const DetailScreen = ({route, navigation}: PropsDetailScreen) => {
       <TouchableOpacity
         style={{backgroundColor: 'red'}}
         onPress={() => navigator.navigate('HomeScreen')}>
-        <Text> hola</Text>
+      
       </TouchableOpacity>
     </ScrollView>
+    </GradientBackground>
   );
 };
 

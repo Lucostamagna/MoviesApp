@@ -10,9 +10,19 @@ interface HorizaontalSliderProps {
 
 const HorizontalSlider = ({title, movies}: HorizaontalSliderProps) => {
   return (
-    <View style={{height: 350, marginTop: 50}}>
+    <View style={{height: 350, marginTop: 20, marginBottom: -60}}>
       {title && (
-        <Text style={{fontSize: 25, fontWeight: 'bold', marginLeft:13}}> {title}</Text>
+        <Text
+          style={{
+            fontSize: 20,
+            fontWeight: '900',
+            marginLeft: 35,
+            marginBottom: 5,
+            color:'black'
+          }}>
+          {' '}
+          { title.toLocaleUpperCase()}
+        </Text>
       )}
 
       <FlatList
